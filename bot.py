@@ -418,15 +418,17 @@ async def on_ready():
 
     try:
 
-        synced = await bot.tree.sync()
+        # synced = await bot.tree.sync()
 
         test_guild = discord.Object(id=1543413824420315187)
         bot.tree.copy_global_to(guild=test_guild)
         test_synced = await bot.tree.sync(guild=test_guild)
 
+        ###
         print(
             f"Synced {len(synced)} global slash commands."
         )
+        ###
 
 
         print(
