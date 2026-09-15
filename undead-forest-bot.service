@@ -1,0 +1,16 @@
+[Unit]
+Description=Undead Forest Discord Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=opc
+WorkingDirectory=/home/opc/undead-forest-bot
+EnvironmentFile=/etc/undead-forest-bot.env
+ExecStart=/usr/bin/python3 /home/opc/undead-forest-bot/bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
